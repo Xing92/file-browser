@@ -1,0 +1,17 @@
+from flask import Flask, render_template
+
+app = Flask (__name__)
+
+@app.route("/")
+@app.route("/home")
+def page_home():
+    return "<p>Home Page</p>"
+
+@app.route("/hello/<name>")
+def page_hello(name):
+    return f"Hello, {name}"
+
+@app.route("/service1/main")
+@app.route("/service1")
+def page_service1_main():
+    return "<p>Service1</p>"
